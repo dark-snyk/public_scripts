@@ -2,10 +2,10 @@ import smtplib
 
 
 def send_email(msg):
-    sender = 'rtln@anorbank.local'
-    password = 'M0ibDuhPSP'
-    recipient = 'botir.islamov@anorbank.uz'
-    server = smtplib.SMTP('192.168.133.107', 25)
+    sender = 'sender_mail'
+    password = 'pass'
+    recipient = 'recipient_mail'
+    server = smtplib.SMTP('ip_address', 25)
     server.starttls()
     try:
         server.login(sender, password)
