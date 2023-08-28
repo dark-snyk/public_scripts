@@ -3,7 +3,7 @@ import functools
 
 # TWO SUM
 nums1 = [2, 7, 11, 15]
-target = 9
+target = 17
 def twoSum(nums: List[int], target: int) -> List[int]:
     # iterations over nums in order to find a sequence number
     for a in range(len(nums1)):
@@ -22,7 +22,7 @@ def removeDuplicates(nums: List[int]) -> int:
     # the sorted() function returns a sorted list of the specified iterable object
     # the set() function returns unique values from an object
     nums[:] = sorted(set(nums))
-    return f"removeDuplicates result {nums}"
+    return f"remove Duplicates result {nums}"
 print(removeDuplicates(nums2))
 
 
@@ -33,37 +33,38 @@ def removeElement(nums: List[int], val: int) -> int:
     # while while 'val' in nums3 it interacts over it, with each interaction it will remove val from a list till it becomes False
     while val in nums:
         nums.remove(val)
-print(removeElement(nums3, val))
+    print(f"remove Element result {nums}")
+removeElement(nums3, val)
 
 
 # Length of Last Word
-s = " hello world "
-def lengthOfLastWord(s: str) -> int:
+expression = " hello worlds "
+def lengthOfLastWord(expression: str) -> int:
     result = 0
     # iterate throughout the list from right to left
-    for i in range(len(s)-1):
+    for i in range(len(expression)-1):
         # ignore all whitespaces
-        if s[i] != " ":
+        if expression[i] != " ":
             result += 1
         # when reaching the alphabet character count all adjacent non-whitespace elements and return the result when reaching a whitespace element
         elif result:
-            return f"lengthOfLastWord result {result}"
+            return f"length Of Last Word result {result}"
     return f" last return {result}"
-print(lengthOfLastWord(s))
+print(lengthOfLastWord(expression))
 
 
 # Is Palindrome
-x = 31
+x = 313
 def isPalindrome(x: int) -> bool:
     if x < 0:
         return False
     # convert given number into string and compare it with the reversed string
     return str(x) == str(x)[::-1]
-print(isPalindrome(x))
+print(f"given value result {isPalindrome(x)} palindrome")
 
 
 # Majority Element
-nums4 = [6, 5, 5]
+nums4 = [6, 5, 5, 6, 6, 3, 3]
 def majorityElement(nums: List[int]) -> int:
     none = None
     count = 0
@@ -74,7 +75,7 @@ def majorityElement(nums: List[int]) -> int:
         # add to count 1, if iteration equal reassigned value
         count += (1 if i == none else -1)
     return none
-print(majorityElement(nums4))
+print(f"majority element result: {majorityElement(nums4)}")
 
 
 # Contains Duplicate
@@ -83,20 +84,19 @@ def containsDuplicate(nums: List[int]) -> bool:
     for i in range(len(nums)):
         uniq_num = set()
         for i in nums:
-           if i in uniq_num:
-               return True
-           else:
-             print(uniq_num)
-             uniq_num.add(i)
-containsDuplicate(nums5)
+            if i in uniq_num:
+                return True
+            else:
+                uniq_num.add(i)
+print(f"contains duplicate result: {containsDuplicate(nums5)}")
 
 
 # Defanging an IP Address
 address = "1.1.1.1"
 def defangIPaddr(address: str) -> str:
-    # using method 'replace' we change '.' values, to '[.]'
+    # using method 'replace' change '.' values, to '[.]'
     return address.replace(".", "[.]")
-print(defangIPaddr(address))
+print(f"defanding ip address result: {defangIPaddr(address)}")
 
 
 nums6 = [1, 2, 1]
@@ -106,7 +106,7 @@ print(getConcatenation(nums6))
 
 
 # Maximum Number of Words Found in Sentences
-sentences = ["please wait", "continue to fight", "continue to win"]
+sentences = ["please wait", "continue to fight", "continue to win u are the best"]
 def mostWordsFound(sentences: List[str]) -> int:
     list_values = []
     for i in sentences:
@@ -116,8 +116,7 @@ def mostWordsFound(sentences: List[str]) -> int:
 # more sophisticated example in one line where we get number as a integer then interact over each elem in order to get max value
 # def mostWordsFound(sentences: List[str]) -> int:
 #   return max([len(i.split()) for i in sentences])
-print(mostWordsFound(sentences))
-
+print(f"most words found result: {mostWordsFound(sentences)}")
 
 
 # Create Target Array in the Given Order
@@ -130,8 +129,7 @@ def createTargetArray(nums: List[int], index: List[int]) -> List[int]:
         # insert place and values together into new target empty list
         target.insert(place, value)
     return target
-print(createTargetArray(nums7, index))
-
+print(f"create target array result: {createTargetArray(nums7, index)}")
 
 
 # How Many Numbers Are Smaller Than the Current Number
@@ -139,7 +137,7 @@ nums8 = [8, 1, 2, 2, 3]
 def smallerNumbersThanCurrent(nums: List[int]) -> List[int]:
     # return len of all elements, compare 'i' with number
     return [len([i for i in nums if i < number]) for number in nums]
-print(smallerNumbersThanCurrent(nums8))
+print(f"smaller numbers than current result: {smallerNumbersThanCurrent(nums8)}")
 
 
 # Sum of Unique Elements
@@ -149,15 +147,14 @@ def sumOfUnique(nums: List[int]) -> int:
     # Count() is a Python built-in function that returns the number of times an object appears in a list.
     [uniq.append(num)for num in nums if nums.count(num) == 1]
     return sum(uniq)
-print(sumOfUnique(nums9))
+print(f'sum of uniq elements result: {sumOfUnique(nums9)}')
 
 
-nums10 = [914,894,448,946,7,835,858,896,56,224,565,971,112,14,116,196,28]
+nums10 = [914, 894, 448, 946, 7, 835, 858, 896, 56, 224, 565, 971, 112, 14, 116, 196, 28]
 original = 7
 def findFinalValue(nums: List[int], original: int) -> int:
-    nums=set(nums)
+    nums = set(nums)
     while original in nums:
-        original *=2
+        original *= 2
     return original
-
 print(findFinalValue(nums10, original))
